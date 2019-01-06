@@ -1,13 +1,11 @@
 package treinamento.utils;
 
-import static treinamento.utils.Helper.getPathDriver;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -65,9 +63,21 @@ public class Helper {
 				return "src\\test\\resources\\windows\\chromedriver.exe";
 			} 
 		} 
+	}
+
+	public void clickActionWebElement(WebElement elemento) { 
+		Actions action = new Actions(driver_);
 		
-			
+		action.moveToElement(elemento).doubleClick().release().perform();
+		
+	}
 
-
+	
+	public boolean elementExist(String name) {
+		
+		List<WebElement> element = driver_.findElements(By.xpath("//a[text()='"+ name +"']"));
+		
+		return element.size() > 0;	
+		
 	}
 }

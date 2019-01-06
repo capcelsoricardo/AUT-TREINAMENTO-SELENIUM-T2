@@ -1,16 +1,10 @@
 package mercury.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
-
-import treinamento.config.SetUp;
 
 
 public class BookAFlightPage {
@@ -33,7 +27,6 @@ public class BookAFlightPage {
 	
 	@FindBy(name = "pass.0.meal")
 	private WebElement comboBoxMeal;
-	
 	
 	@FindBy(name = "creditCard")
 	private WebElement comboBoxCardType;
